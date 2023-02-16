@@ -63,7 +63,9 @@ router.put("/:id", async (req, res) => {
     });
 
     if (data[0]) {
-      res.status(200).json(data);
+      res
+        .status(200)
+        .json({ message: `${req.params.id} Updated successfully` });
     } else {
       res.status(404).json({ message: "No category with this id" });
     }
